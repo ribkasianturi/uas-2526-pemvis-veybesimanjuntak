@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="SOAL4UAS"/>
+        <attribute name="authors" value="MSI CYBORG"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-12-17 03:36:44 PM"/>
+        <attribute name="created" value="TVNJIENZQk9SRztNU0k7MjAyNS0xMi0xNTswNzozNjoxMyBQTTsyMjM0"/>
+        <attribute name="edited" value="TVNJIENZQk9SRztNU0k7MjAyNS0xMi0xNTswODowNDowNSBQTTsxOzIzMzk="/>
+        <attribute name="edited" value="VXNlcjtSSUJLQUFBQTsyMDI1LTEyLTE3OzAzOjM2OjQ0IFBNOzI7MjM2NA=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="n, i" type="Integer" array="False" size=""/>
+            <declare name="nama" type="String" array="True" size="10"/>
+            <declare name="shift" type="Integer" array="True" size="10"/>
+            <declare name="totalShift" type="Integer" array="False" size=""/>
+            <declare name="Ratarata" type="Real" array="False" size=""/>
+            <declare name="maxShift, minShift" type="Integer" array="False" size=""/>
+            <declare name="namaMax, namaMin" type="String" array="False" size=""/>
+            <output expression="&quot;Masukkan jumlah asisten : &quot;" newline="True"/>
+            <input variable="n"/>
+            <for variable="i" start="0" end="n-1" direction="inc" step="1">
+                <input variable="nama[i]"/>
+                <input variable="shift[i]"/>
+            </for>
+            <assign variable="totalShift" expression="0"/>
+            <assign variable="maxShift" expression="shift[0]"/>
+            <assign variable="minShift" expression="shift[0]"/>
+            <assign variable="namaMax" expression="nama[0]"/>
+            <assign variable="namaMin" expression="nama[0]"/>
+            <for variable="i" start="0" end="n-1" direction="inc" step="1">
+                <assign variable="totalShift" expression="totalShift+shift[i]"/>
+                <if expression="shift[i]&gt;maxShift">
+                    <then>
+                        <assign variable="maxShift" expression="shift[i]"/>
+                        <assign variable="namaMax" expression="nama[i]"/>
+                    </then>
+                    <else/>
+                </if>
+                <if expression="shift[i]&lt;minShift">
+                    <then>
+                        <assign variable="minShift" expression="shift[i]"/>
+                        <assign variable="namaMin" expression="nama[i]"/>
+                    </then>
+                    <else/>
+                </if>
+            </for>
+            <assign variable="Ratarata" expression="totalShift/n"/>
+            <output expression="&quot;Daftar Shift:&quot;" newline="True"/>
+            <for variable="i" start="0" end="n-1" direction="inc" step="1">
+                <output expression="nama[i]&amp;&quot;=&quot;&amp;Shift[i]" newline="True"/>
+            </for>
+            <output expression="&quot;Total Shift=&quot; &amp;totalShift" newline="True"/>
+            <output expression="&quot;Rata-rata=&quot; &amp;Ratarata" newline="True"/>
+            <output expression="&quot;Shift terbanyak=&quot; &amp;namaMax &amp;&quot;(&quot;&amp;maxShift&amp;&quot;)&quot;" newline="True"/>
+            <output expression="&quot;Shift tersedikit=&quot; &amp;namaMin &amp;&quot;(&quot;&amp;minShift&amp;&quot;)&quot;" newline="True"/>
+            <output expression="&quot;Distribusi shift tidak merata, beberapa asisten terbebani.&quot;" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

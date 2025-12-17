@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="SOAL5"/>
+        <attribute name="authors" value="MSI CYBORG"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-12-17 04:25:55 PM"/>
+        <attribute name="created" value="TVNJIENZQk9SRztNU0k7MjAyNS0xMi0xNjswNDozNjowMiBQTTsyMjMw"/>
+        <attribute name="edited" value="TVNJIENZQk9SRztNU0k7MjAyNS0xMi0xNjswNDo1Njo0MiBQTTsxOzIzNDQ="/>
+        <attribute name="edited" value="VXNlcjtSSUJLQUFBQTsyMDI1LTEyLTE3OzA0OjI1OjU1IFBNOzE7MjM2NA=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="n, i" type="Integer" array="False" size=""/>
+            <declare name="nama" type="String" array="False" size=""/>
+            <declare name="ipk" type="Real" array="False" size=""/>
+            <declare name="penghasilan" type="Integer" array="False" size=""/>
+            <declare name="tanggungan" type="Integer" array="False" size=""/>
+            <declare name="status" type="String" array="False" size=""/>
+            <input variable="n"/>
+            <for variable="i" start="1" end="n" direction="inc" step="1">
+                <input variable="nama"/>
+                <input variable="ipk"/>
+                <input variable="penghasilan"/>
+                <input variable="tanggungan"/>
+                <if expression="ipk&gt;=3.0 &amp;&amp;penghasilan&lt;=3000000 &amp;&amp;tanggungan&gt;=3">
+                    <then>
+                        <assign variable="status" expression="&quot;Tidak Lolos&quot;"/>
+                    </then>
+                    <else>
+                        <assign variable="status" expression="&quot;Lolos Syarat awal&quot;"/>
+                    </else>
+                </if>
+                <output expression="nama &amp;&quot;-&gt;&quot; &amp;status" newline="True"/>
+            </for>
+        </body>
+    </function>
+</flowgorithm>
